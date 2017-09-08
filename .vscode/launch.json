@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "Launch index.html (disable sourcemaps)",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceRoot}/demo01/base0907.html" // 每次修改这里的地址
+        },
+        {
+            "name": "Launch index02.html (disable sourcemaps)", // 添加新的配置也可以, 这一修改名字方便辨别
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceRoot}/demo02/basic0908.html" // 每次修改这里的地址
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            x "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

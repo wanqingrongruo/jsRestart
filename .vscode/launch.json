@@ -15,6 +15,13 @@
             "file": "${workspaceRoot}/demo02/basic0908.html" // 每次修改这里的地址
         },
         {
+            "name": "dom.html (disable sourcemaps)", // 添加新的配置也可以, 这一修改名字方便辨别
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceRoot}/demo02/dom.html" // 每次修改这里的地址
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- document object model -->
+    <!-- dom 允许 js 修改 html 元素的内容 -->
+    <script>
+        function showInfo() {
+            document.getElementById("demo").innerHTML = "ni da ye"
+            document.getElementById("image").src = "http://upload-images.jianshu.io/upload_images/565029-f6ccc6e156099357.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+            document.getElementById("p2").style.color = "blue"
+        }
+
+        document.getElementById("demo").onclick = function() {
+                showInfo()
+            }
+            // document.write(Date()) // 在文档加载后使用这句会覆盖该文档
+    </script>
+
+    <h1>Web</h1>
+    <h2 onclick="this.innerHTML='ths'">clickHere</h2>
+    <p id="demo">element</p>
+    <p id="p2">hello</p>
+    <img id="image" src="http://upload-images.jianshu.io/upload_images/565029-013002ee76523276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 " alt="6666 ">
+    <button type="button" onclick="showInfo()">clickme</button>
+
+    <input type="text" id="fname" onchange="upperCase()">
+
+    <!-- onload 和 onunload 事件会在用户进入或离开页面时被触发。
+    onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
+    onload 和 onunload 事件可用于处理 cookie -->
+
+</body>
+
+</html>

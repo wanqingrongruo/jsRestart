@@ -10,8 +10,36 @@
 
 <body>
 
+
+
     <!-- document object model -->
     <!-- dom 允许 js 修改 html 元素的内容 -->
+    <h1>Web</h1>
+    <h2 onclick="this.innerHTML='ths'">clickHere</h2>
+    <p id="demo">element</p>
+    <p id="p2">hello</p>
+    <img id="image" src="http://upload-images.jianshu.io/upload_images/565029-013002ee76523276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 " alt="6666" style="width:120px; height: 120px"></img>
+    <br/>
+    <button type="button" onclick="showInfo()">clickme</button>
+
+    <input type="text" id="fname" onchange="upperCase()">
+
+    <!-- onload 和 onunload 事件会在用户进入或离开页面时被触发。
+    onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
+    onload 和 onunload 事件可用于处理 cookie -->
+
+    <br/>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:green; width:120px; height:20px; padding:40px; color:#ffffff;">把鼠标移到上面</div>
+    <br/>
+    <div onmousedown="mDown(this)" onmouseup="mUP(this)" style="background-color:green; width:120px; height:20px; padding:40px; color:#ffffff;">请按下鼠标</div>
+
+    <br/>
+
+    <div id="div01">
+        <p id="p1">这里是一个段落</p>
+        <p id="p3">这是另一个段落</p>
+    </div>
+
     <script>
         function showInfo() {
             document.getElementById("demo").innerHTML = "ni da ye"
@@ -23,20 +51,45 @@
                 showInfo()
             }
             // document.write(Date()) // 在文档加载后使用这句会覆盖该文档
+
+        function upperCase() {
+            var content = document.getElementById("fname")
+            content.value = content.value.toUpperCase()
+        }
+
+        function mOver(obj) {
+            obj.innerHTML = "ths"
+        }
+
+        function mOut(obj) {
+            obj.innerHTML = "把鼠标移到上面"
+        }
+
+        function mDown(obj) {
+            obj.style.backgroundColor = "#1ec5e5"
+            obj.innerHTML = "请释放鼠标"
+        }
+
+        function mUP(obj) {
+            obj.style.backgroundColor = "green"
+            obj.innerHTML = "请按下鼠标"
+        }
+
+        //添加 html 元素 => 必须首先创建该元素（元素节点），然后向一个已存在的元素追加该元素
+        var para = document.createElement("p")
+        var node = document.createTextNode("这是一个新段落")
+        para.appendChild(node)
+        var element = document.getElementById("div01")
+        element.appendChild(para)
+
+        //删除 html 元素 => 首先获得该元素的父元素
+        var parent = document.getElementById("div01")
+        var child = document.getElementById("p1")
+        parent.removeChild(child)
+
+        var child02 = document.getElementById("p3");
+        child02.parentNode.removeChild(child02);
     </script>
-
-    <h1>Web</h1>
-    <h2 onclick="this.innerHTML='ths'">clickHere</h2>
-    <p id="demo">element</p>
-    <p id="p2">hello</p>
-    <img id="image" src="http://upload-images.jianshu.io/upload_images/565029-013002ee76523276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 " alt="6666 ">
-    <button type="button" onclick="showInfo()">clickme</button>
-
-    <input type="text" id="fname" onchange="upperCase()">
-
-    <!-- onload 和 onunload 事件会在用户进入或离开页面时被触发。
-    onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。
-    onload 和 onunload 事件可用于处理 cookie -->
 
 </body>
 

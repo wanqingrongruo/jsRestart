@@ -22,16 +22,16 @@ function person(name, age, eyecolor) {
     }
 }
 
-var zwx = new person("ggg", 222, "red")
-zwx.age = 3333
-zwx.changeName("wwwwwww")
+// var zwx = new person("ggg", 222, "red")
+// zwx.age = 3333
+// zwx.changeName("wwwwwww")
 
 // javaScript 基于 prototype, 不基于 class
 
 // 遍历对象的属性
-for (x in person) {
-    txt = txt + person[x]
-}
+// for (x in person) {
+//     txt = txt + person[x]
+// }
 
 
 // JavaScript 只有一种数字类型 - 都是8个字节
@@ -43,3 +43,12 @@ var num = 34
 var kNum = 123e5
 var oNnum = 0377 // 八进制
 var hNum = 0xff // 十六进制
+
+// string
+
+var myString = "qwgdckjbcznmnm,cxz,cn,c,nd,d"
+myString.length
+myString.indexOf('j')
+myString.match('bc')
+var rString = myString.replace('bc', '666666')
+console.log(rString)

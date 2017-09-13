@@ -52,3 +52,43 @@ myString.indexOf('j')
 myString.match('bc')
 var rString = myString.replace('bc', '666666')
 console.log(rString)
+var currentDate = Date()
+var dateObj = new Date()
+dateObj.setFullYear(2015, 12, 31)
+var seconds = dateObj.getTime()
+
+var today = new Date()
+
+if (dateObj > today) {
+    console.log("Today is before .....")
+} else {
+    console.log("Today is after .....")
+}
+
+// Array
+
+var newArray = new Array()
+newArray[0] = 111
+newArray[1] = 222
+newArray[2] = 333
+
+for (x in newArray) {
+    console.log(newArray[x])
+}
+
+var array02 = new Array(444, 555, 666)
+console.log(newArray.concat(array02))
+console.log(array02.join("/"))
+
+Math.round(4.7) // 四舍五入
+Math.random() // 0-1的随机数
+console.log(Math.floor(Math.random() * 11))
+
+// 正则
+
+var patt1 = new RegExp("e")
+console.log(patt1.test("ijdkhskjlkfgedkhd")) // 是否有值
+console.log(patt1.exec("tywehdvshklcksljhjkdhklkhlkjjjjjjjjjjjjjjjjj")) // 指定值
+
+patt1.compile("p")
+console.log(patt1.test("ijdkhskjlkfgedkhd")) // 是否有值

@@ -1,8 +1,6 @@
 {
     "version": "0.2.0",
-    "configurations": [
-
-        {
+    "configurations": [{
             "name": "jsObject", //单独调试js，即可以直接运行js
             "type": "node",
             "request": "launch",
@@ -20,6 +18,13 @@
             "console": "internalConsole",
             "preLaunchTask": "",
             "sourceMaps": false
+        },
+        {
+            "name": "Launch jsObject.html (disable sourcemaps)",
+            "type": "chrome",
+            "request": "launch",
+            "sourceMaps": false,
+            "file": "${workspaceRoot}/demo03/jsObject.html" // 每次修改这里的地址
         },
         {
             "name": "Launch index.html (disable sourcemaps)",

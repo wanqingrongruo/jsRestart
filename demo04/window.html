@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // document.write(location.pathname)
+        var t
+        var c = 0
+
+        function timeDown() {
+            document.getElementById("txt").value = c
+            c = c + 1
+            t = setTimeout(function() {
+                timeDown()
+            }, 1000);
+        }
+
+        function timeStop() {
+            c = 0
+            setTimeout(function() {
+                document.getElementById("txt").value = 0
+            }, 0);
+            clearTimeout(t)
+        }
+
+        function getCookies(name) {
+
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(name + "=")
+
+                if (c_start != -1) {
+                    c_start = c_start + name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) {
+                        c_end = document.cookie.length
+                        return unescape(document.cookie.substring(c_start, c_end))
+                    }
+                }
+                return ""
+            }
+        }
+
+        function setCookie(c_name, value, expiredays) {
+            var exdate = new Date()
+            exdate.setDate(exdate.getDate() + expiredays)
+            document.cookie = c_name + "=" + escape(value) + ((expiredays == null) ? "" : "; expires=" + exdate.toGMTString())
+        }
+
+
+        function checkCookies() {
+            username = getCookie('username')
+            if (username != null && username != "") {
+                alert('Welcome again ' + username + '!')
+            } else {
+                username = prompt('Please enter your name:', "")
+                if (username != null && username != "") {
+                    setCookie('username', username, 365)
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="checkCookies()">
+
+    <form>
+        <input type="button" value="开始计时！" onclick="timeDown()">
+        <input type="text" id="txt">
+        <input type="button" value="停止计时！" onclick="timeStop()">
+    </form>
+
+    <p>请点击上面的“开始计时”按钮来启动计时器。输入框会一直进行计时，从 0 开始。点击“停止计时”按钮可以终止计时，并将计数重置为 0。</p>
+
+</body>
+
+</html>
